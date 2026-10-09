@@ -2,20 +2,20 @@
 name: "CodeQL Advanced"
 
 on:
-  workflow_dispatch:
-    inputs:
-      message:
-        description: 'Message for manually triggering'
-        required: false
-        default: 'Triggered for Updates'
-        type: string
-  push:
-    branches: [ "master", "develop", "release-1.0.x", "release-0.10.x", "release-0.8.x", "release-0.9.x" ]
-  pull_request:
-    branches: [ "master", "develop", "release-1.0.x", "release-0.10.x", "release-0.8.x", "release-0.9.x" ]
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Message for manually triggering'
+        required: false
+        default: 'Triggered for Updates'
+        type: string
+  push:
+    branches: [ "master", "develop", "release-1.0.x", "release-0.10.x", "release-0.8.x", "release-0.9.x" ]
+  pull_request:
+    branches: [ "master", "develop", "release-1.0.x", "release-0.10.x", "release-0.8.x", "release-0.9.x" ]
   schedule:
     - cron: '30 10 * * 2'
-  
+    
 jobs:
   analyze:
     name: Analyze (${{ matrix.language }})
